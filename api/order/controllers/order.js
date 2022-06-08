@@ -17,6 +17,7 @@ module.exports = {
         let totalPayment = 0;
         products.forEach((product) => {
           totalPayment = totalPayment + product.price-((product.price*product.discount)/100);
+          
         });
     
         const charge = await stripe.charges.create({
@@ -43,5 +44,6 @@ module.exports = {
           createOrder.push(entry);
         }
         return createOrder;
+        
       },
 };
